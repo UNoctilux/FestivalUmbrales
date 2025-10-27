@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Festival Umbrales</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Umbrales">
+    <meta name="language" content="es">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./style.css">
+    <script src="contador.js"></script>
+ </head>
+<body>
+     <!-- HEADER 
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">-->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="img/Group 217.png" alt="lerolero">
+       </div>
+       <button class="burger" id="abrir">☰</button>
+      <nav class="nav" id="nav">
+        <div class="nav-inner">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="entrada.html">Entradas</a></li>
+          <li><a href="festival.html">Sobre nosotros</a></li>
+        </ul>
+        <div class="seccioncard">
+          <h3>Modo diurno</h3>          
+          
+          <div class="boton">
+          <input type="checkbox" id="btn-switch">
+          <label for="btn-switch" class="lbl-switch"></label>
+
+        </div>
+        </div>
+        </div>
+        
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="video-fondo">
+      <source src="img/vi.mp4" type="video/mp4">
+      Tu navegador no soporta el formato de video.
+    </video>
+    <div class="overlay"></div>
+    <div class="textohero">
+        <h1 id="titulo1">FESTIVAL DE LOS <br> UMBRALES</h1>
+        <div class="imgcartel"></div>
+        </div>
+        
+        <a class="botoncito1" href="entrada.html">Consegui tu entrada</a>
+  </section>
+<div class="contenedor"> 
+      <div class="contenido">
+        <div class="contador">
+  <div class="bloque">
+    <span id="dias">45</span>
+    <p>DÍAS</p>
+  </div>
+  <div class="separador"></div>
+  <div class="bloque">
+    <span id="horas">25</span>
+    <p>HORAS</p>
+  </div>
+  <div class="separador"></div>
+  <div class="bloque">
+    <span id="minutos">50</span>
+    <p>MINUTOS</p>
+  </div>
+  <div class="separador"></div>
+  <div class="bloque">
+    <span id="segundos">13</span>
+    <p>SEGUNDOS</p>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  <!-- Seccion azul bloque 2 imagenes-->
+  <section class="info">
+    <div class="tarjetas">
+      <img class="imagen1" src="img/Tarj1.png" alt="lerolero">
+      <div class="texto">
+        <h2 class="tituloa">Encuentro</h2>
+        <p class="parrafo">El Festival Umbrales es un encuentro único de 24 horas que celebra la unión de las sociedades diurna y nocturna en un mismo espacio. Entre amaneceres y atardeceres, se cruzan culturas, identidades y tradiciones en un intercambio vibrante lleno de música, aromas, vestimentas y símbolos compartidos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN GALERÍA -->
+  <section class="info">
+    <div class="tarjetas">
+      
+      <div class="texto">
+        <h2 class="tituloa">Experiencia</h2>
+        <p class="parrafo">Vivir el Festival Umbrales es entrar en una experiencia multisensorial: sonidos, sabores, colores y texturas se mezclan en un desfile al aire libre que conecta a todo el país. Espuma fluorescente, hongos transformadores y vestimentas brillantes marcan un ritual colectivo que activa todos los sentidos y despierta la magia del umbral.</p>
+      </div>
+      <img class="imagen1" src="img/Tarj2.png" alt="lerolero">
+    </div>
+  </section>
+  <section class="info">
+    <div class="tarjetas">
+      <img class="imagen1" src="img/Tarj3.png" alt="lerolero">
+      <div class="texto">
+        <h2 class="tituloa">Celebración</h2>
+        <p class="parrafo">El Festival Umbrales es más que una fiesta: es una celebración que invita a compartir, intercambiar y reconocerse en lo distinto. Durante 24 horas se juega, se vive y se crea una síntesis cultural que revela la identidad de Noctilux: la mezcla que nos conecta.</p>
+      </div>
+    </div>
+  </section>
+  <section class="ulti">
+    <h1>Veni a lumbrear</h1>
+    <section class="imgfinal">
+      <span style="display:block; height:600px;"></span>
+    </section>
+  </section>
+  <div class="decoracion" aria-hidden="true">
+  <img src="img/hom.png" alt="" class="png p1">
+  <img src="img/hom2.png" alt="" class="png p2">
+  <img src="img/hom3.png" alt="" class="png p3">
+  <img src="img/hom4.png" alt="" class="png p4">
+  <img src="img/hom5.png" alt="" class="png p5">
+  <img src="img/hom6.png" alt="" class="png p6">
+</div>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="social">
+        <img src="img/Group 217.png" alt="lerolero">
+      </div>
+      <div class="more-info">
+        <ul>
+          <li>@Festival.umbrales</li>
+          <li>@Capresse.ex3</li>
+          <li>@noctilux.tdm3</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+ </html>
+<script>
+// ===== MENU HAMBURGUESA =====
+const nav = document.querySelector("#nav");
+const abrir = document.querySelector("#abrir");
+
+abrir.addEventListener("click", () => {
+  nav.classList.toggle("visible"); // abre/cierra el menú
+});
+document.addEventListener("click", (e) => {
+  const clicDentroDelMenu = nav.contains(e.target);
+  const clicEnBoton = abrir.contains(e.target);
+
+  if (!clicDentroDelMenu && !clicEnBoton) {
+    nav.classList.remove("visible");
+  }
+});
+// ===== MODO OSCURO / SWITCH =====
+const switchBtn = document.getElementById('btn-switch');
+const body = document.body;
+const textoModo = document.querySelector('.seccioncard h3'); // el <h3> que dice "Modo diurno"
+
+// === función para actualizar el texto del título ===
+function actualizarTextoModo() {
+  if (body.classList.contains('dark-mode')) {
+    textoModo.textContent = "Modo diurno"; // cuando está en modo noche
+  } else {
+    textoModo.textContent = "Modo nocturno"; // cuando está en modo día
+  }
+}
+
+// === restaurar modo guardado ===
+if (localStorage.getItem('modo') === 'noche') {
+  body.classList.add('dark-mode');
+  switchBtn.checked = true;
+  actualizarTextoModo();
+} else {
+  actualizarTextoModo();
+}
+
+// === alternar modo ===
+function alternarModo() {
+  body.classList.toggle('dark-mode');
+  localStorage.setItem('modo', body.classList.contains('dark-mode') ? 'noche' : 'dia');
+  actualizarTextoModo();
+}
+
+// === listener del switch ===
+switchBtn.addEventListener('change', alternarModo);
+
+</script>

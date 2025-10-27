@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Festival del Umbral</title>
+    <meta charset="utf-8">
+    <meta name="description" content="trabajo">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="language" content="es">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./style.css">
+ </head>
+<body>
+     <!-- HEADER -->
+   <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="img/Group 217.png" alt="lerolero">
+       </div>
+       <button class="burger" id="abrir">☰</button>
+      <nav class="nav" id="nav">
+        <div class="nav-inner">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="entrada.html">Entradas</a></li>
+          <li><a href="festival.html">Sobre nosotros</a></li>
+        </ul>
+        <div class="seccioncard">
+          <h3>Modo diurno</h3>          
+          
+          <div class="boton">
+          <input type="checkbox" id="btn-switch">
+          <label for="btn-switch" class="lbl-switch"></label>
+
+        </div>
+        </div>
+        </div>
+        
+      </nav>
+    </div>
+  </header>
+   <video autoplay muted loop playsinline class="video-fondo2">
+      <source src="img/vi.mp4" type="video/mp4">
+      Tu navegador no soporta el formato de video.
+    </video>
+ <section class="quienes-somos">
+  <div class="contenido-quienes">
+    <h1>¿Quiénes somos?</h1>
+
+    <p>
+      El Festival Umbrales está conformado por un colectivo comprometido con la unidad,
+      la diversidad y la transformación social. Nuestro propósito es superar las barreras
+      que nos separan y generar espacios donde las personas puedan encontrarse, expresarse
+      y reconocerse como parte de una misma comunidad.
+    </p>
+
+    <p>
+      Desde nuestro primer festival sabíamos que algo iba a cambiar en las personas. Por eso,
+      cada año decidimos hacerlo más grande y mejor que el anterior. En un principio fue
+      complicado, comenzó como algo pequeño, pero el deseo de encontrarnos fue más fuerte.
+    </p>
+
+    <p>
+      Hoy, Umbrales se ha convertido en un fenómeno colectivo que trasciende ciudades y fronteras.
+      En nuestra última edición, más de <strong>250.000 personas</strong> se acercaron a umbrearse con nosotros —
+      compartiendo música, arte, energía y nuevas formas de ver el mundo.
+    </p>
+
+    <p>
+      Este año decidimos ir todavía más lejos: expandir los espacios, abrir nuevos portales
+      y crear experiencias que transformen la manera en que habitamos la luz y la sombra.
+      Cada edición de Umbrales busca inspirar, reunir y encender algo nuevo en quienes
+      se atreven a cruzar.
+    </p>
+
+    <p class="final">
+      Vení, conectá con nosotros… <em>¿qué estás esperando para cruzar tu propio umbral?</em>
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-grid">
+      <div class="social">
+        <img src="img/Group 217.png" alt="lerolero">
+      </div>
+      <div class="more-info">
+        <ul>
+          <li>@Festival.umbrales</li>
+          <li>@Capresse.ex3</li>
+          <li>@noctilux.tdm3</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+ </html>
+<script>
+// ===== MENU HAMBURGUESA =====
+const nav = document.querySelector("#nav");
+const abrir = document.querySelector("#abrir");
+
+abrir.addEventListener("click", () => {
+  nav.classList.toggle("visible"); // abre/cierra el menú
+});
+document.addEventListener("click", (e) => {
+  const clicDentroDelMenu = nav.contains(e.target);
+  const clicEnBoton = abrir.contains(e.target);
+
+  if (!clicDentroDelMenu && !clicEnBoton) {
+    nav.classList.remove("visible");
+  }
+});
+
+// ===== MODO OSCURO / SWITCH =====
+const switchBtn = document.getElementById('btn-switch');
+const body = document.body;
+const textoModo = document.querySelector('.seccioncard h3'); // el <h3> que dice "Modo diurno"
+
+// === función para actualizar el texto del título ===
+function actualizarTextoModo() {
+  if (body.classList.contains('dark-mode')) {
+    textoModo.textContent = "Modo diurno"; // cuando está en modo noche
+  } else {
+    textoModo.textContent = "Modo nocturno"; // cuando está en modo día
+  }
+}
+
+// === restaurar modo guardado ===
+if (localStorage.getItem('modo') === 'noche') {
+  body.classList.add('dark-mode');
+  switchBtn.checked = true;
+  actualizarTextoModo();
+} else {
+  actualizarTextoModo();
+}
+
+// === alternar modo ===
+function alternarModo() {
+  body.classList.toggle('dark-mode');
+  localStorage.setItem('modo', body.classList.contains('dark-mode') ? 'noche' : 'dia');
+  actualizarTextoModo();
+}
+
+// === listener del switch ===
+switchBtn.addEventListener('change', alternarModo);
+
+</script>
