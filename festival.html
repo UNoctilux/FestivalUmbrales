@@ -10,6 +10,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="./style.css">
  </head>
+ <style>
+  #resA{
+    color: #FFF319;
+  }
+  #resR{
+    color: #FF00FF;
+  }
+  #resV{
+    color: #00ff66;
+  }
+.hero2 {
+  height: 40vh;
+  background: url(img/us.png) center/cover no-repeat;
+  display: grid;
+  mix-blend-mode: hard-light;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2),
+              0 10px 50px rgba(0,0,0,1);
+}
+.textohero2 {
+ position: relative;
+  z-index: 3;
+  transform: translate(-24%, 10%);
+  }
+  #titulo1{
+    font-size: 120px;
+    letter-spacing: -2px;
+  }
+  
+.quienes-somos {
+  position: relative;
+  max-width: 70%;   
+  margin: 5% auto;
+  padding: 8% 5%;          /* antes 80px 20px → ahora proporcional */
+  text-align: justify;
+  font-family: 'Rubik', sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto, #fff);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1.5rem;   /* reemplazo de 10px */
+  backdrop-filter: blur(10.5px);
+  transition: background-color 0.4s ease;
+}
+
+/* Título */
+.quienes-somos h1 {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.5rem); /* escala según ancho de pantalla */
+  margin-bottom: 2rem;
+  color: var(--color-acento, #ff00ff);
+}
+
+/* animación suave al aparecer */
+.contenido-quienes {
+  position: relative;
+  max-width: 70%;   
+  margin: 5% auto;
+  padding: 8% 5%;          /* antes 80px 20px → ahora proporcional */
+  text-align: justify;
+  font-family: 'Rubik', sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto, #fff);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1.5rem;   /* reemplazo de 10px */
+  backdrop-filter: blur(10.5px);
+  transition: background-color 0.4s ease;
+  animation: aparecer 1s ease-out forwards;
+}
+.cinta-final {
+  position: relative;
+  display: inline-block;
+  width: 120%;
+  left: -10%;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: #fff;
+  background: #00ff66; /* mismo amarillo de resA */
+  transform: rotate(6deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  margin: 6rem 0 4rem 0;
+  z-index: 5;
+}
+
+/* Para que se vea bien sobre fondo oscuro */
+body.dark-mode .cinta-final {
+  background: #ff00ff; /* cambia a magenta si querés destacar en modo oscuro */
+  color: #fff;
+}
+.overlay3{
+   height: 100%;
+  opacity: 0.7;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  mix-blend-mode: color-dodge;
+  transition: background 0.4s;
+  z-index: 4;
+  background-repeat: no-repeat;
+}
+</style>
+
 <body>
      <!-- HEADER -->
    <header class="header">
@@ -39,45 +146,43 @@
       </nav>
     </div>
   </header>
-   <video autoplay muted loop playsinline class="video-fondo2">
-      <source src="img/vi.mp4" type="video/mp4">
-      Tu navegador no soporta el formato de video.
-    </video>
- <section class="quienes-somos">
+   <section class="hero2">
+    <div id="entradah" class="img5"></div>
+    <div class="textohero2">
+        <h1 id="titulo1">Sobre nosotros</h1>
+        </div>
+  </section>
   <div class="contenido-quienes">
-    <h1>¿Quiénes somos?</h1>
+    <div class="overlay3" style="background-image: url('img/gen.png');"></div>
+    <h1 id="resA">Quiénes somos</h1>
 
     <p>
-      El Festival Umbrales está conformado por un colectivo comprometido con la unidad,
-      la diversidad y la transformación social. Nuestro propósito es superar las barreras
-      que nos separan y generar espacios donde las personas puedan encontrarse, expresarse
-      y reconocerse como parte de una misma comunidad.
-    </p>
-
+El Festival Umbrales está conformado por un colectivo comprometido con la <span id="resA">unidad</span>, la <span id="resA">diversidad</span> y la <span id="resA">transformación social</span>. Nuestro propósito es <span id="resA">superar las barreras</span> que nos separan y generar <span id="resA">espacios vivos</span> donde las personas puedan <span id="resA">encontrarse</span>, <span id="resA">expresarse</span> y <span id="resA">reconocerse</span> como parte de una misma <span id="resA">comunidad</span> en movimiento.
+Creemos que cada <span id="resA">encuentro</span> es una oportunidad para Re imaginar la forma en que habitamos el mundo, para <span id="resA">construir puentes</span> entre quienes miran la realidad desde distintos lugares y encender nuevas formas de <span id="resA">conexión</span>.
+Desde nuestro primer encuentro, supimos que algo iba a <span id="resA">cambiar</span> en quienes se atrevieran a <span id="resA">cruzar</span>. Porque transformar no es solo participar de un festival: es <span id="resA">abrirse al intercambio</span>, sentir el pulso <span id="resA">colectivo</span> y permitirse <span id="resA">transformar</span> junto a los demás.
+</p>
+    </div>
+<div class="contenido-quienes">
+   <div class="overlay3" style="background-image: url('img/comu.png');"></div>
+    <h1 id="resR">El surgimiento</h1>
     <p>
-      Desde nuestro primer festival sabíamos que algo iba a cambiar en las personas. Por eso,
-      cada año decidimos hacerlo más grande y mejor que el anterior. En un principio fue
-      complicado, comenzó como algo pequeño, pero el deseo de encontrarnos fue más fuerte.
-    </p>
+Umbrales nació como una <span id="resR">celebración</span> de 24 horas <span id="resR">ininterrumpidas</span>, donde las sociedades <span id="resR">diurna y nocturna</span> se entrelazan en un <span id="resR">intercambio cultural</span>, sensorial y emocional. Los hongos, símbolo de <span id="resR">conexión</span> y transformación, nos inspiran a crear una red viva entre <span id="resR">personas</span>, territorios y experiencias: un entramado micelar que crece bajo la superficie y nos une.
+Con el paso de los años, lo que comenzó como un pequeño <span id="resR">ritual</span> se transformó en un fenómeno <span id="resR">colectivo</span> que <span id="resR">trasciende</span> ciudades y fronteras. En nuestra última edición, más de <span id="resR">250.000 personas</span> se acercaron a umbrear con nosotros — <span id="resR">compartiendo</span> música, arte, energía y nuevas formas de <span id="resR">habitar</span> la luz y la sombra.
+</p></div>
 
+<div class="contenido-quienes">
+   <div class="overlay3" style="background-image: url('img/umbral.png');"></div>
+     <h1 id="resV">El cruce</h1>
     <p>
-      Hoy, Umbrales se ha convertido en un fenómeno colectivo que trasciende ciudades y fronteras.
-      En nuestra última edición, más de <strong>250.000 personas</strong> se acercaron a umbrearse con nosotros —
-      compartiendo música, arte, energía y nuevas formas de ver el mundo.
-    </p>
+Durante el festival, el <span id="resV">amanecer</span> y el <span id="resV">atardecer</span> marcan los <span id="resV">umbrales</span> simbólicos del encuentro: momentos en los que lo <span id="resV">diurno y lo nocturno</span> se cruzan para <span id="resV">intercambiar</span> accesorios, vestimentas y saberes, creando una <span id="resV">identidad común</span> que refleja la esencia de Noctilux. En cada esquina, los aromas dulces de los hongos, la espuma <span id="resV">fluorescente</span> y la música envuelven los cuerpos que esperan, cubriéndose de brillos que laten con la noche.
+Umbrales es <span id="resV">colectivo</span>, sensorial, espontáneo y enigmático. Es un espacio donde <span id="resV">solear</span> es habitar la energía del día, <span id="resV">lunar</span> es abrazar el misterio de la noche, <span id="resV">lumar</span> es dejarse brillar por los tragos y las pinturas, y <span id="resV">esporar</span> es compartir la espuma micelar que nos conecta. Donde cada cuerpo deja su <span id="resV">huella</span> luminosa, cada <span id="resV">vínculo</span> se expande, y cada mirada abre un <span id="resV">nuevo portal</span>.
+</p></div>
 
-    <p>
-      Este año decidimos ir todavía más lejos: expandir los espacios, abrir nuevos portales
-      y crear experiencias que transformen la manera en que habitamos la luz y la sombra.
-      Cada edición de Umbrales busca inspirar, reunir y encender algo nuevo en quienes
-      se atreven a cruzar.
-    </p>
-
-    <p class="final">
-      Vení, conectá con nosotros… <em>¿qué estás esperando para cruzar tu propio umbral?</em>
+    <p class="cinta-final">
+       Vení, umbreá con nosotros… ¿qué estás esperando para cruzar tu propio <br> umbral?
     </p>
   </div>
-</section>
+
 
 <footer class="footer">
     <div class="container footer-grid">

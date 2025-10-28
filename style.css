@@ -16,6 +16,7 @@
   --texture: screen;
   --resaltar: #FFF319;
   --fotoumbral: url("img/f2.png");
+  --fotoumbral2: url("img/f12.png");
   --colorburguer: #00ff66;
 }
 
@@ -36,6 +37,7 @@
   --texture: multiply;
   --resaltar: #FF00FF;
   --fotoumbral: url("img/f2d.png");
+  --fotoumbral2: url("img/f13.png");
   --colorburguer: #FF00FF;
 }
 @font-face {
@@ -606,36 +608,6 @@ footer ul{
         transition: all 0.3s ease;
 }
 
-
-.quienes-somos {
-  position: relative;
-  max-width: 70%;   
-  margin: 5% auto;
-  padding: 8% 5%;          /* antes 80px 20px → ahora proporcional */
-  text-align: justify;
-  font-family: 'Rubik', sans-serif;
-  line-height: 1.6;
-  color: var(--color-texto, #fff);
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 1.5rem;   /* reemplazo de 10px */
-  backdrop-filter: blur(10.5px);
-  transition: background-color 0.4s ease;
-}
-
-/* Título */
-.quienes-somos h1 {
-  text-align: center;
-  font-size: clamp(1.8rem, 3vw, 2.5rem); /* escala según ancho de pantalla */
-  margin-bottom: 2rem;
-  color: var(--color-acento, #ff00ff);
-}
-
-/* animación suave al aparecer */
-.contenido-quienes {
-  opacity: 0;
-  transform: translateY(5%);
-  animation: aparecer 1s ease-out forwards;
-}
 
 @keyframes aparecer {
   to {
