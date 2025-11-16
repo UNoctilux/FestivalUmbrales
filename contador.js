@@ -4,7 +4,7 @@ const second = 1000,
       day = hour * 24;
 
 // Fecha del evento
-let countDown = new Date("Nov 15, 2025 16:00:00").getTime();
+let countDown = new Date("Nov 17, 2025 16:00:00").getTime();
 
 let x = setInterval(function() {
   let now = new Date().getTime(),
@@ -28,5 +28,6 @@ let x = setInterval(function() {
   document.getElementById('segundos').innerText = Math.floor((distance % minute) / second);
 
 }, second);
+
 
 
