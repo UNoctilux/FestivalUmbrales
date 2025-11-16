@@ -15,7 +15,7 @@ let x = setInterval(function() {
     
     // Reemplazamos todo el contador con un mensaje
     document.querySelector(".contenedor").innerHTML = `
-      <h2 style="color:#0011aa; font-size:3rem; text-align:center; margin-top:2rem;">
+      <h2 style="color:#ffffff; font-size:3rem; text-align:center; margin-top:2rem;">
         ¡Bienvenidos a la muestra!
       </h2>
     `;
@@ -28,4 +28,5 @@ let x = setInterval(function() {
   document.getElementById('segundos').innerText = Math.floor((distance % minute) / second);
 
 }, second);
+
 
